@@ -1,0 +1,89 @@
+.about .blocks{
+    min-height: 3128px;
+    margin: 120px 0 160px 0;}
+.about .block_right_container{
+    width: 610px;}
+.about .block_left_text{
+    min-height: 195px;}
+.about .values{
+    display: flex;
+    justify-content: center;}
+        .values .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+            width: 1110px;
+            height: 609px;}
+                .container .middle{
+                    display: flex;
+                    justify-content: space-between;}
+                        .middle .post{
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            align-items: center;
+                            width: 350px;
+                            height: 457px;}
+                                .middle .images{
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: end;
+                                    width: 240px;
+                                    height: 240px;}
+                                        .middle .number{
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+                                            background-color: #FCB72B;
+                                            border-radius: 96px;
+                                            width: 96px;
+                                            height: 96px;
+                                            position: absolute;
+                                            margin: 0 0 -55px 0;}
+.Faq{
+    display: flex;
+    justify-content: center;
+    text-align: center;}
+        .Faq .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;}
+                .Faq [class^="block"]{
+                    display: flex;
+                    justify-content: space-between;
+                    width: 1110px;}
+                .Faq .blockmargin{
+                    margin: 64px 0;}
+                        .Faq .container{
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;}
+                                .Faq [class^="chapter"]{
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    background-color: #F2F5F9;
+                                    transition: 0.2s;}
+                                    .Faq [class^="chapter"]:hover{
+                                        transition: 0.2s;
+                                        background-color: #FFF4DF;}
+                                    .Faq [class^="chapter"]:active{
+                                        background-color: #ffe9c1;}
+                                .chaptermiddle{
+                                    margin: 16px 0;}
+                                        .Faq .text_container{
+                                            display: flex;
+                                            flex-direction: column;
+                                            justify-content: space-between;
+                                            width: 650px;
+                                            margin: 32px 40px;}
+                                                .Faq .text_container .title_4{
+                                                    display: flex;
+                                                    justify-content: space-between;}
+                                                .Faq [id^="advanced"]{
+                                                    display: none;
+                                                    text-align: left;}
+                                                .Faq .mini-arrow:hover{
+                                                    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(180deg) brightness(1) contrast(0.80);}
+                                                    

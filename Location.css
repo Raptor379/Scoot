@@ -1,0 +1,17 @@
+.body_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: 763px;
+    margin: 120px 0;}
+        .text_container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 1111px;}
+                .text_container .title_2{
+                    width: 351px;}
+                .text_container .text{
+                    width: 445px;}
+    

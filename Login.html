@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="stylesheet" href="Scoot_default_options.css">
+        <link rel="stylesheet" href="Login.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lexend+Deca:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/4.0.9/jquery.inputmask.bundle.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="main">
+                <div class="head">
+                    <div class="name" id="name_1">
+                        Вход
+                    </div>
+                    <div class="scroll">
+                        <div>
+                            <div class="around" id="scroll"></div>
+                        </div>
+                    </div>
+                    <div class="name" id="name_2">
+                        Регистрация
+                    </div>
+                </div>
+                <div class="login_body" id="login">
+                    <form>
+                        <input type="email" placeholder="Электронная почта" id="mail">
+                        <div class="password_container">
+                            <input type="password" placeholder="Пароль" id="password">
+                            <div class="password_eye_container">
+                                <img src="password_eye.svg" class="password_eye" id="show">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="wrong" id="wrong">
+                        Неправильно указана электронная почта или пароль. <br>
+                        Попробуйте ещё раз.
+                    </div>
+                    <div class="button pointer" id="button">
+                        Войти    
+                    </div>
+                </div>
+                <div class="login_body" id="signup">
+                    <form class="form_signup">
+                        <input type="text" placeholder="Имя" id="nick">
+                        <input type="text" placeholder="Фамилия" id="surname">
+                        <input type="text" placeholder="Город" id="city">
+                        <input type="text" placeholder="+7 ___ ___-__-__" oninput="this.value=this.value.replace(/[^0-9]/g,'');" maxlength="16" id="mobile">
+                        <input type="email" placeholder="Электронная почта" id="email">
+                        <div class="password_container">
+                            <input type="password" placeholder="Пароль" id="password1">
+                            <div class="password_eye_container">
+                                <img src="password_eye.svg" class="password_eye" id="show1">
+                            </div>
+                        </div>
+                        <div class="password_container">
+                            <input type="password" placeholder="Повторите пароль" id="password2">
+                            <div class="password_eye_container">
+                                <img src="password_eye.svg" class="password_eye" id="show2">
+                            </div>
+                        </div>
+                        <div class="wrong" id="wrong1">
+                            Не все поля заполнены.<br>
+                            Попробуйте еще раз.
+                        </div>
+                        <div class="button pointer" id="button_signup">
+                            Зарегистрироваться
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+<script>
+    const element = document.getElementById('scroll');
+    let Clicked = false;
+    let login = document.getElementById('login');
+    let signup = document.getElementById('signup');
+
+    element.addEventListener('click', function() {
+        if (!Clicked) {
+            positionX = 48;
+            name_1.style.color = 'white'
+            element.style.transform = `translateX(${positionX}px)`;
+            name_2.style.color = '#FCB72B';
+            login.style.opacity = '0';
+            setTimeout(() => {
+                login.style.display = 'none'
+                signup.style.display = 'flex';
+                setTimeout(() => {
+                    signup.style.opacity = '1';
+                }, 250);
+            }, 250);}
+            
+        else {
+            signup.style.opacity = '0';
+            setTimeout(() => {
+                signup.style.display = 'none'
+                login.style.display = 'flex';
+                setTimeout(() => {
+                    login.style.opacity = '1';
+                }, 250);
+            }, 250);
+            positionX = 0;
+            name_2.style.color = 'white'
+            element.style.transform = `translateX(${positionX}px)`;
+            name_1.style.color = '#FCB72B';
+        }
+        Clicked = !Clicked
+    });
+</script>
+<script>
+    const inputs = document.querySelectorAll('input');
+
+    inputs.forEach(input => {
+            input.addEventListener('input', () => {
+                input.style.backgroundColor = '#757575'; 
+                setTimeout(() => {
+                    input.style.backgroundColor = '#bebebe'; 
+                }, 100);
+            });
+        });
+    const mail = document.getElementById('mail');
+    let password = document.getElementById('password');
+    let wrong = document.getElementById('wrong');
+    let button = document.getElementById('button');
+    button.addEventListener('click', function() {
+        mailValue = mail.value;
+        passwordValue = password.value;
+        if (mailValue === 'vadikknyazev11489@gmail.com' && passwordValue === '652370') {
+            window.location.href = 'file:///C:/Users/Vadim/OneDrive/Рабочий%20стол/Работа/Scoot/Scoot.html'
+        }
+        else {
+            wrong.style.visibility = 'visible';
+        }
+    });
+    function togglePasswordVisibility(eyeId, inputId) {
+    const eye = document.getElementById(eyeId);
+    const input = document.getElementById(inputId);
+    
+    eye.addEventListener('click', function() {
+        if (input.type === 'text') {
+            input.type = 'password';
+        } else {
+            input.type = 'text';
+        }
+    });
+}
+togglePasswordVisibility('show', 'password');
+togglePasswordVisibility('show1', 'password1');
+togglePasswordVisibility('show2', 'password2');
+    $(document).ready(function() {
+        const cities = ["Москва", "Санкт-Петербург", 
+            "Новосибирск", "Екатеринбург", "Нижний Новгород",
+            "Казань", "Челябинск", "Омск", "Самара", "Ростов-на-Дону",
+            "Уфа", "Красноярск", "Воронеж", "Пермь", "Волгоград",
+            "Тюмень", "Ижевск", "Барнаул", "Ульяновск", "Хабаровск",
+            "Ярославль", "Тольятти", "Махачкала", "Кемерово", "Рязань",
+            "Набережные Челны", "Саратов", "Тверь", "Ставрополь", "Сочи",
+            "Таганрог", "Тула", "Калуга", "Благовещенск", "Архангельск", "Ковров", "Владимир"];
+        $("#city").autocomplete({
+            source: cities
+        });
+    })
+</script>
+<script>
+    function symbolsReplace(textfield) {
+        textfield.addEventListener('input', function() {
+        textfield.value = textfield.value.replace(/[^А-Яа-яЁё\s]/gu, '');
+    })};
+    symbolsReplace(nick);
+    symbolsReplace(surname);
+    symbolsReplace(city);
+</script>
+<script>
+    $(document).ready(function() {
+    $('#mobile').inputmask("+7 999 999-99-99");
+    });
+</script>
+<script>
+    function WrongsTest(testik) {
+        if(testik && testik.style) {
+            if(testik.value.trim().length === 0) {
+            testik.style.backgroundColor= 'rgb(255, 133, 133)';
+            return true;
+        }
+        else {
+            testik.style.backgroundColor = 'rgba(114, 255, 114, 0.63)';
+            return false;
+        }
+        }
+    }
+const buttons = document.getElementById('button_signup');
+let wrongSignup = document.getElementById('wrong1');
+    buttons.addEventListener('click', function() {
+        let errorCount = 0;
+        errorCount += WrongsTest(nick);
+        errorCount += WrongsTest(surname);
+        errorCount += WrongsTest(city);
+        errorCount += WrongsTest(mobile);
+        errorCount += WrongsTest(email);
+        errorCount += WrongsTest(password1);
+        errorCount += WrongsTest(password2);
+    if(errorCount === 0) {
+        window.location.href = 'Scoot.html';
+    }
+    else {
+        wrongSignup.style.visibility = 'visible'
+    }
+    })
+</script>
+<script>
+
+</script>
